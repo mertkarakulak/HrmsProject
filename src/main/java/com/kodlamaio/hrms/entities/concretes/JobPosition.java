@@ -1,27 +1,23 @@
 package com.kodlamaio.hrms.entities.concretes;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name="job_positions")
 public class JobPosition {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="pos_id")
-    private int pid;
+    private int id;
 
     @Column(name="title")
     private String title;
-
-
-    public JobPosition() {}
-
-    public JobPosition(int pid, String title) {
-        this.pid = pid;
-        this.title = title;
-    }
 }
